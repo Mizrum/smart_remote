@@ -1,0 +1,26 @@
+import random
+
+menu = {}
+
+while True:
+    dish_name = raw_input("Yo - what's up, bitch :) What kind of today's dish you want to serve _man:")
+    dish_price = raw_input("Give me your money:")
+    menu[dish_name] = dish_price
+
+    another = raw_input("Do you want to add something else? (yes/no)")
+
+    if another.lower() == "yes":
+        continue
+    elif another.lower() == "no":
+        break
+    else:
+        print "I count this as YES ;)"
+
+
+with open("menu.txt", "w+") as f:
+    for dish in menu:
+        f.write("%s, %s EUR\n" % (dish_name, menu[dish_name]))
+
+print "See you bitch :)"
+
+
